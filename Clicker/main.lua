@@ -129,8 +129,7 @@ function onUpdate( event )
 	ship.y = ship.y+k
 end
 
+
 Runtime:addEventListener( "tap", onGlobalClick )
 
 Runtime:addEventListener("enterFrame",onUpdate)
-
-aim:addEventListener( "", listener )
