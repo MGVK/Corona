@@ -1,1 +1,0 @@
-Demonstrates how to use create media objects to perform recording functions.  Buttons help perform start, stop, and pause functions.

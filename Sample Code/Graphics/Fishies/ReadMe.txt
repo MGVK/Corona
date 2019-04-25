@@ -1,1 +1,0 @@
-A simple animation made using graphics, object orientation, and touch listeners.  When they hit a wall, the fishies will automatically flip to go in the other direction. Upon clicking on the fishies, they will temporarily turn purple for a duration before turning back to normal.  

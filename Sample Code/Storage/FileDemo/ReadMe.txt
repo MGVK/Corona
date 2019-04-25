@@ -1,1 +1,0 @@
-Shows how to create and read a file in /Documents directory.

@@ -1,1 +1,0 @@
-Demonstrates the use of the gyroscope.  Displays the gyroscope values on the screen and moves the object based on the given values.

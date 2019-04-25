@@ -1,1 +1,0 @@
-Demonstrates using event listeners and media functions to call out the camera on a device.

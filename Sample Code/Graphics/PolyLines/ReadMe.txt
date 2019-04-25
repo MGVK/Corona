@@ -1,1 +1,0 @@
-This application uses line segments to create shapes. The math function random helps create multiple stars of different sizes, rotations, positions, and color.
