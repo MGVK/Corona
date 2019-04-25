@@ -5,15 +5,17 @@ local options = {
     height = 41
 }
 
-physics.start( )
-physics.setDrawMode( "hybrid" )
+physics.start()
+-- physics.setDrawMode( "hybrid" )
 physics.setGravity( 0, 0 )
 
-local scoreText = display.newText( "Score: 0",
+local scoreText = display.newText(
+ "Score: 0",
  display.contentCenterX, 100)
 
 
--- local img = graphics.newImageSheet("click.png",options)
+-- local img = graphics.
+-- newImageSheet("click.png",options)
 local x  = display.newImage("click.png",
 	display.contentWidth/2,
 	display.contentHeight/2)
@@ -21,7 +23,7 @@ local x  = display.newImage("click.png",
 x.width = 100
 x.height = 100
 
-local pula = display.newRect( 200, 100, 10, 20 )
+local pula = display.newRect( 200, 100, 10, 10 )
 
 local ship = display.newRect( 50,100, 30,30)
 ship:setFillColor( 0,1,0.5 )
@@ -33,6 +35,19 @@ aim:setFillColor(1,0,0)
 physics.addBody( pula, "dynamic")
 physics.addBody( aim, "dynamic")
 
+pula.isFixedRotation = true
+aim.isFixedRotation = true
+
+aim.collision = function ( self, event )
+	if event.phase=="began" then
+		transition.to( aim,
+			{ time=500, 
+				delay=0,
+			 	alpha=0.0,
+			 	onComplete = kill_perform})
+	end
+end
+aim:addEventListener( "collision" )
 
 local score=0
 
@@ -43,7 +58,8 @@ end
 
 function onGlobalClick( event )
 	-- print(event.x, event.y)
-	local c  = display.newCircle( event.x, event.y, 10 )
+	local c  = display.newCircle( event.x, 
+		event.y, 10 )
 	c:setFillColor( 0,1,1 )
 	timer.performWithDelay( 1000, function ( event )
 		c:removeSelf( )
@@ -57,7 +73,7 @@ function onGlobalClick( event )
 		 (event.x-pula.x)/n,
 		 (event.y-pula.y)/n,
 		 pula.x,
-		 pula.y )
+		 pula.y)
 
 	isShot = true
 end
@@ -66,11 +82,11 @@ function kill_perform()
 	aim.x = 300
 	aim.y = math.random(10,
 		display.contentHeight-10)
+	aim.alpha=1
 
 	aim:setLinearVelocity( 0,0 )
 	aim:applyLinearImpulse( 0,0,0,0)
 	aim:rotate( 0 )
-
 
 	isShot = false
 	pula.alpha=0
@@ -121,3 +137,5 @@ x:addEventListener( "tap", onClick )
 Runtime:addEventListener( "tap", onGlobalClick )
 
 Runtime:addEventListener("enterFrame",onUpdate)
+
+aim:addEventListener( "", listener )
