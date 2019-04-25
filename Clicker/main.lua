@@ -95,7 +95,7 @@ function kill_perform()
 	isShot = false
 	pula.alpha=0
 
-	physics.setGravity( 0,math.random( -3,3 ) )
+	physics.setGravity( 0,math.random( -3,3 )*(score/10) )
 
 end
 
