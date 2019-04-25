@@ -50,12 +50,6 @@ end
 aim:addEventListener( "collision" )
 
 local score=0
-
-function onClick(event )
-	score=score+1
-	scoreText.text = "Score: "..score
-end
-
 function onGlobalClick( event )
 	-- print(event.x, event.y)
 	local c  = display.newCircle( event.x, 
@@ -79,6 +73,10 @@ function onGlobalClick( event )
 end
 
 function kill_perform()
+	score=score+1
+	scoreText.text = "Score: "..score
+
+
 	aim.x = 300
 	aim.y = math.random(10,
 		display.contentHeight-10)
@@ -90,6 +88,8 @@ function kill_perform()
 
 	isShot = false
 	pula.alpha=0
+
+	physics.setGravity( 0,math.random( -3,3 ) )
 
 end
 
@@ -106,7 +106,6 @@ function onUpdate( event )
 	if aim.x>display.contentWidth
 		or aim.x<0 or aim.y<0
 		or aim.y>display.contentHeight then
-		kill_perform()
 	end
 
 	if pula.x>display.contentWidth
@@ -129,10 +128,6 @@ function onUpdate( event )
 
 	ship.y = ship.y+k
 end
-
-
-
-x:addEventListener( "tap", onClick )
 
 Runtime:addEventListener( "tap", onGlobalClick )
 
