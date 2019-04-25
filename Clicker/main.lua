@@ -51,25 +51,31 @@ aim:addEventListener( "collision" )
 
 local score=0
 function onGlobalClick( event )
+
+	if gameover then 
+		start_values()
+	else
+
 	-- print(event.x, event.y)
-	local c  = display.newCircle( event.x, 
-		event.y, 10 )
-	c:setFillColor( 0,1,1 )
-	timer.performWithDelay( 1000, function ( event )
-		c:removeSelf( )
-	end,1)
+		local c  = display.newCircle( event.x, 
+			event.y, 10 )
+		c:setFillColor( 0,1,1 )
+		timer.performWithDelay( 1000, function ( event )
+			c:removeSelf( )
+		end,1)
 
-	pula:setLinearVelocity( 0,0 )
-	pula:applyLinearImpulse( 0,0,0,0)
+		pula:setLinearVelocity( 0,0 )
+		pula:applyLinearImpulse( 0,0,0,0)
 
-	pula.alpha=1
-	pula:applyLinearImpulse( 
-		 (event.x-pula.x)/n,
-		 (event.y-pula.y)/n,
-		 pula.x,
-		 pula.y)
+		pula.alpha=1
+		pula:applyLinearImpulse( 
+			 (event.x-pula.x)/n,
+			 (event.y-pula.y)/n,
+			 pula.x,
+			 pula.y)
 
-	isShot = true
+		isShot = true
+	end
 end
 
 function kill_perform()
@@ -95,11 +101,23 @@ end
 
 
 isShot=false
+gameover =false
 
 k=1
 m=5
 
 n=10000
+
+function start_values()
+	score=-1
+	gameover=false
+	kill_perform()
+end
+
+function perform_gameOver(  )
+	scoreText.text = "GAME OVER!!!\n Your score is: "..score.." !"
+	gameover = true
+end
 
 function onUpdate( event )
 
@@ -117,6 +135,11 @@ function onUpdate( event )
 	if not isShot then
 		pula.x = ship.x
 		pula.y = ship.y
+	end
+
+
+	if aim.y<-100 or aim.y>display.contentHeight+100 then
+		perform_gameOver()
 	end
 
 
