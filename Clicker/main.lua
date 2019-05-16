@@ -153,6 +153,5 @@ function onUpdate( event )
 end
 
 
-Runtime:addEventListener( "tap", onGlobalClick )
-
+Runtime:addEventListener("tap",onGlobalClick)
 Runtime:addEventListener("enterFrame",onUpdate)

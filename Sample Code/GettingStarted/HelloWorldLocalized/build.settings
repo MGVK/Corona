@@ -1,0 +1,45 @@
+--
+-- For more information on build.settings, see the Project Build Settings guide at:
+-- https://docs.coronalabs.com/guide/distribution/buildSettings
+--
+
+settings =
+{
+	orientation =
+	{
+		-- Supported values for orientation:
+		-- portrait, portraitUpsideDown, landscapeLeft, landscapeRight
+		default = "portrait",
+		supported = { "portrait" }
+	},
+
+	iphone =
+	{
+		xcassets = "Images.xcassets",
+		plist =
+		{
+			UIStatusBarHidden = false,
+			UILaunchStoryboardName = "LaunchScreen",
+			ITSAppUsesNonExemptEncryption = false, -- This sample doesn't use custom encryption
+			CFBundleLocalizations = {"en", "fr", "pt", "zh", "de", "it", "ja", "es", "ru", "uk"},
+		},
+	},
+
+	window =
+	{
+		titleText =
+		{
+			default = "Hello World",
+			["fr"] = "Bonjour, le monde!",
+			["pt"] = "Olá mundo!",
+			["zh-hant"] = "世界你好！",
+			["zh-hans"] = "世界你好！",
+			["de"] = "Hallo, Welt!",
+			["it"] = "Salve, mondo!",
+			["ja"] = "世界よ、こんにちは！",
+			["es"] = "¡Hola mundo!",
+			["ru"] = "Привет, мир!",
+			["uk"] = "Привіт, світе!",
+		},
+	},
+}

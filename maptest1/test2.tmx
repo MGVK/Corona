@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="24">
+ <tileset firstgid="1" source="genericPlatformer.tsx"/>
+ <layer id="1" name="background" width="10" height="10">
+  <data encoding="csv">
+121,121,121,121,121,121,121,121,121,121,
+121,121,121,121,121,121,121,121,121,121,
+121,121,121,121,121,121,121,121,121,121,
+121,121,121,113,113,113,121,113,121,121,
+121,121,121,113,113,121,113,113,121,121,
+121,121,113,113,113,113,113,113,121,121,
+121,121,113,121,113,113,121,113,121,121,
+121,121,121,121,113,121,121,121,121,121,
+121,121,121,121,121,121,121,121,121,121,
+121,121,121,121,121,121,121,121,121,121
+</data>
+ </layer>
+ <objectgroup id="2" name="ground">
+  <object id="9" gid="54" x="160" y="320" width="32" height="32">
+   <properties>
+    <property name="bodyType" value="static"/>
+   </properties>
+  </object>
+  <object id="10" gid="54" x="0" y="320" width="32" height="32">
+   <properties>
+    <property name="bodyType" value="static"/>
+   </properties>
+  </object>
+  <object id="11" gid="54" x="32" y="320" width="32" height="32">
+   <properties>
+    <property name="bodyType" value="static"/>
+   </properties>
+  </object>
+  <object id="12" gid="54" x="64" y="320" width="32" height="32">
+   <properties>
+    <property name="bodyType" value="static"/>
+   </properties>
+  </object>
+  <object id="13" gid="54" x="128" y="320" width="32" height="32">
+   <properties>
+    <property name="bodyType" value="static"/>
+   </properties>
+  </object>
+  <object id="14" gid="54" x="96" y="320" width="32" height="32">
+   <properties>
+    <property name="bodyType" value="static"/>
+   </properties>
+  </object>
+  <object id="15" gid="54" x="192" y="320" width="32" height="32">
+   <properties>
+    <property name="bodyType" value="static"/>
+   </properties>
+  </object>
+  <object id="16" gid="54" x="224" y="320" width="32" height="32">
+   <properties>
+    <property name="bodyType" value="static"/>
+   </properties>
+  </object>
+  <object id="17" gid="54" x="256" y="320" width="32" height="32">
+   <properties>
+    <property name="bodyType" value="static"/>
+   </properties>
+  </object>
+  <object id="18" gid="54" x="288" y="320" width="32" height="32">
+   <properties>
+    <property name="bodyType" value="static"/>
+   </properties>
+  </object>
+  <object id="19" gid="54" x="0" y="288" width="32" height="32">
+   <properties>
+    <property name="bodyType" value="static"/>
+   </properties>
+  </object>
+  <object id="20" gid="54" x="0" y="256" width="32" height="32">
+   <properties>
+    <property name="bodyType" value="static"/>
+   </properties>
+  </object>
+  <object id="21" gid="54" x="288" y="256" width="32" height="32">
+   <properties>
+    <property name="bodyType" value="static"/>
+   </properties>
+  </object>
+  <object id="22" gid="54" x="288" y="288" width="32" height="32">
+   <properties>
+    <property name="bodyType" value="static"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="3" name="hero" offsetx="4" offsety="5">
+  <object id="23" name="hero1" gid="125" x="117" y="117" width="81" height="92"/>
+ </objectgroup>
+</map>
